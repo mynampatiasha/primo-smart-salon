@@ -121,14 +121,15 @@ h1, h2, h3 {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     background: url('images/hero.png') center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 140px 20px 60px 20px; /* Top padding ensures it clears the navbar */
 }
 
 .hero-overlay {
@@ -163,8 +164,9 @@ h1, h2, h3 {
 
 .hero-inline-img {
     width: 100%;
-    max-width: 600px;
-    height: auto;
+    max-width: 700px;
+    max-height: 45vh;
+    object-fit: cover;
     border-radius: 12px;
     margin: 0 auto 30px auto;
     display: block;
