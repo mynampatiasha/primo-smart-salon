@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIMO SMART SALON | Madanapalle's Premium Unisex Salon</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Flatpickr (Calendar) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#home" class="logo-container" style="text-decoration: none;">
+            <div class="logo-circle">
+                <img src="images/primo_logo.png" alt="Primo Logo">
+            </div>
+            <div class="logo-text">
+                <h2>PRIMO</h2>
+                <span>SMART SALON</span>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#reviews">Reviews</a>
+            <button class="nav-book-btn" onclick="openBookingModal()">Book Appointment</button>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="trust-badge">
+                <i class="fa-solid fa-star"></i> 4.9/5 (745+ Google Reviews)
+            </div>
+            <h1>Experience Luxury & Elegance</h1>
+            <p>Madanapalle's Highest-Rated Unisex Salon. Specializing in Advanced Skin Care, Hair Transformations, and Bridal Artistry.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="openBookingModal('salon')">Book Salon Visit</button>
+                <button class="btn-secondary" onclick="openBookingModal('home')">Book Home Service</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Premium Services</h2>
+            <p>Elevate your beauty with our signature treatments.</p>
+        </div>
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/hair.png" alt="Hair Styling">
+                </div>
+                <div class="service-info">
+                    <div class="availability-tag salon-only"><i class="fa-solid fa-building"></i> Salon Only</div>
+                    <h3>Permanent Straightening & Spa</h3>
+                    <p>Silky, smooth, and frizz-free hair using premium professional products.</p>
+                    <button class="btn-text" onclick="openBookingModal('Permanent Straightening', 'salon')">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/facial.png" alt="Hydra Facial">
+                </div>
+                <div class="service-info">
+                    <div class="availability-tag salon-only"><i class="fa-solid fa-building"></i> Salon Only</div>
+                    <h3>15-in-1 Hydra Facial</h3>
+                    <p>Our signature deep-cleansing and glowing treatment. A customer favorite!</p>
+                    <button class="btn-text" onclick="openBookingModal('Hydra Facial', 'salon')">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/makeup.png" alt="Bridal Makeup">
+                </div>
+                <div class="service-info">
+                    <div class="availability-tag both"><i class="fa-solid fa-house-chimney"></i> Home & Salon</div>
+                    <h3>Bridal & Party Makeup</h3>
+                    <p>Flawless, elegant makeup artistry for your most special occasions.</p>
+                    <button class="btn-text" onclick="openBookingModal('Makeup')">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/mens.png" alt="Men's Grooming">
+                </div>
+                <div class="service-info">
+                    <div class="availability-tag both"><i class="fa-solid fa-house-chimney"></i> Home & Salon</div>
+                    <h3>Men's Grooming & Haircuts</h3>
+                    <p>Premium beard trims, stylish fades, and relaxing head massages for men.</p>
+                    <button class="btn-text" onclick="openBookingModal('Mens Grooming')">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Service 5 -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/waxing.png" alt="Waxing & Spa">
+                </div>
+                <div class="service-info">
+                    <div class="availability-tag both"><i class="fa-solid fa-house-chimney"></i> Home & Salon</div>
+                    <h3>Waxing & Threading</h3>
+                    <p>Pain-free, hygienic, and smooth hair removal using premium organic wax.</p>
+                    <button class="btn-text" onclick="openBookingModal('Waxing')">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Service 6 -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/mani_pedi.png" alt="Manicure & Pedicure">
+                </div>
+                <div class="service-info">
+                    <div class="availability-tag both"><i class="fa-solid fa-house-chimney"></i> Home & Salon</div>
+                    <h3>Luxury Manicure & Pedicure</h3>
+                    <p>Relax and rejuvenate your hands and feet with our premium spa therapies.</p>
+                    <button class="btn-text" onclick="openBookingModal('Nail Spa')">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <p>Join 700+ happy clients in Madanapalle.</p>
+        </div>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">"Recently visited here got an excellent service. Choose hydra facial 15 in 1 first time in Madanapalli got an excellent results. Must visit salon!"</p>
+                <div class="reviewer">- Golden Box</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">"It is a wonderful salon and they are also good experts on makeup. Located right in front of the Sundar Raj petrol bunk at NTR Circle."</p>
+                <div class="reviewer">- Donga Rajesh</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">"Prices are reasonable and service is excellent, staff is very friendly. I got a wonderful hair treatment here."</p>
+                <div class="reviewer">- Reddy Yoga Kumar</div>
+            </div>
+        </div>
+        <div class="badges">
+            <span class="badge"><i class="fa-solid fa-venus"></i> Women-owned</span>
+            <span class="badge"><i class="fa-solid fa-rainbow"></i> LGBTQ+ Friendly</span>
+        </div>
+    </section>
+
+    <!-- Location Map Section -->
+    <section class="location-section" id="location" style="padding: 0 50px 80px 50px; background: var(--bg-card);">
+        <div class="section-header">
+            <h2>Find Us in Madanapalle</h2>
+            <p>1st floor, KNR complex, NTR circle, above IBOCO Ice cream, beside KFC</p>
+        </div>
+        <div class="map-container" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); max-width: 1200px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <iframe src="https://maps.google.com/maps?q=PRIMO%20SMART%20SALON%20Madanapalle&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="logo-container" style="justify-content: center; margin-bottom: 20px;">
+                    <div class="logo-circle">
+                        <img src="images/primo_logo.png" alt="Primo Logo">
+                    </div>
+                    <div class="logo-text" style="text-align: left;">
+                        <h2>PRIMO</h2>
+                        <span>SMART SALON</span>
+                    </div>
+                </div>
+                <p><i class="fa-solid fa-location-dot"></i> 1st floor, KNR complex, NTR circle, above IBOCO Ice cream, beside KFC, P and T Colony, Madanapalle 517325</p>
+                <p><i class="fa-solid fa-clock"></i> Open Daily until 9:30 PM</p>
+                <p><i class="fa-solid fa-phone"></i> +91 99660 16169</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Primo Smart Salon. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Booking Modal (Advanced UI) -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeBookingModal()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="booking-progress">
+                <div class="step active" id="step1-indicator">1. Service</div>
+                <div class="step" id="step2-indicator">2. Location</div>
+                <div class="step" id="step3-indicator">3. Details</div>
+            </div>
+
+            <!-- Step 1: Select Service -->
+            <div class="booking-step active" id="step1">
+                <h3>Select Your Service</h3>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="selectService('Hair & Styling')">
+                        <i class="fa-solid fa-scissors"></i> Hair & Styling
+                    </button>
+                    <button class="option-btn" onclick="selectService('Skin & Facial')">
+                        <i class="fa-solid fa-spa"></i> Skin & Facial
+                    </button>
+                    <button class="option-btn" onclick="selectService('Makeup & Bridal')">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Makeup & Bridal
+                    </button>
+                    <button class="option-btn" onclick="selectService('Other Services')">
+                        <i class="fa-solid fa-ellipsis"></i> Other
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Select Location -->
+            <div class="booking-step" id="step2">
+                <h3>Where would you like the service?</h3>
+                <div class="options-grid">
+                    <button class="option-btn location-btn" onclick="selectLocation('salon')">
+                        <i class="fa-solid fa-building"></i>
+                        <span>Visit Salon</span>
+                        <small>1st floor, KNR complex, Madanapalle</small>
+                    </button>
+                    <button class="option-btn location-btn" onclick="selectLocation('home')">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <span>At Home Service</span>
+                        <small>Our expert comes to your doorstep</small>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Details & Confirmation -->
+            <div class="booking-step" id="step3">
+                <h3>Final Details</h3>
+                <form id="bookingForm" onsubmit="submitBooking(event)">
+                    <div class="input-group">
+                        <label>Your Name</label>
+                        <input type="text" id="b-name" required placeholder="Enter your name">
+                    </div>
+                    <div class="input-group">
+                        <label>Date & Time (Closes 9:30 PM)</label>
+                        <input type="datetime-local" id="b-date" required>
+                    </div>
+                    <div class="input-group" id="address-group" style="display:none;">
+                        <label style="display: flex; justify-content: space-between; align-items: center;">
+                            Home Address
+                            <button type="button" onclick="captureLocation()" style="background: none; border: 1px solid var(--rose-gold); color: var(--rose-gold); padding: 4px 10px; border-radius: 4px; font-size: 11px; cursor: pointer;"><i class="fa-solid fa-location-crosshairs"></i> Capture GPS</button>
+                        </label>
+                        <textarea id="b-address" placeholder="Enter full address & pincode" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-100 mt-4" style="background:#25D366; border:none; padding:15px; width:100%; font-size:16px;">Confirm via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/919966016169" target="_blank" class="float-wa">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Floating AI Bot -->
+    <button class="float-ai" onclick="toggleChatbot()">
+        <i class="fa-solid fa-robot"></i>
+    </button>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3><i class="fa-solid fa-robot"></i> Primo AI Assistant</h3>
+            <button onclick="toggleChatbot()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-msg">✨ Welcome to <strong>Primo Smart Salon</strong>! I'm your AI Assistant. How can I help you today?</div>
+        </div>
+        <div class="chatbot-options" id="chatbotOptions">
+            <button onclick="askBot('services')"><i class="fa-solid fa-scissors"></i> Services</button>
+            <button onclick="askBot('timings')"><i class="fa-solid fa-clock"></i> Timings</button>
+            <button onclick="askBot('location')"><i class="fa-solid fa-location-dot"></i> Contact</button>
+            <button onclick="askBot('careers')"><i class="fa-solid fa-briefcase"></i> Careers</button>
+        </div>
+    </div>
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</body>
+</html>
